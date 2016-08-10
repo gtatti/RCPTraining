@@ -2,7 +2,11 @@
 package com.altran.rental.ui.parts;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import javax.inject.Named;
 
+import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -18,6 +22,10 @@ public class RentalPropertyPart {
 	private Label productLabel;
 	private Label rentedToLabel;
 	private Label customerLabel;
+	private Label startLabel;
+	private Label startDateLabel;
+	private Label endLabel;
+	private Label endDateLabel;
 	private Group dateGroup;
 	
 	
@@ -32,12 +40,10 @@ public class RentalPropertyPart {
 		infoGroup.setLayout(new GridLayout(2, false));
 		
 		productLabel = new Label(infoGroup, SWT.BORDER);
-		GridData productGd = new GridData();
-		productGd.horizontalSpan = 2;
-		productLabel.setLayoutData(productGd);
+		productLabel.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 2, 1));
 		
 		rentedToLabel = new Label(infoGroup, SWT.BORDER);
-		rentedToLabel.setText("Lou� � : ");
+		rentedToLabel.setText("Loué à : ");
 		
 		customerLabel = new Label(infoGroup, SWT.BORDER);
 		
@@ -45,26 +51,34 @@ public class RentalPropertyPart {
 		dateGroup.setText("Dates de location");
 		dateGroup.setLayout(new GridLayout(2, false));
 		
-		Label startLabel = new Label(dateGroup, SWT.NONE);
+		startLabel = new Label(dateGroup, SWT.NONE);
 		startLabel.setText("du : ");
 		
-		Label startDatelabel = new Label(dateGroup, SWT.NONE);
-		startDatelabel.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
-		startDatelabel.setText("New Label");
+		startDateLabel = new Label(dateGroup, SWT.NONE);
+		startDateLabel.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		
-		Label endLabel = new Label(dateGroup, SWT.NONE);
+		endLabel = new Label(dateGroup, SWT.NONE);
 		endLabel.setSize(22, 15);
 		endLabel.setText("au : ");
 		
-		Label endDateLabel = new Label(dateGroup, SWT.NONE);
+		endDateLabel = new Label(dateGroup, SWT.NONE);
 		endDateLabel.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
-		endDateLabel.setText("New Label");
 		
 		this.setRental(agency.getRentals().get(1));
 	}
 	
 	public void setRental(Rental rental) {
+		if(productLabel == null)
+			return;
 		productLabel.setText(rental.getRentedObject().getName());
 		customerLabel.setText(rental.getCustomer().getDisplayName());
+		startDateLabel.setText(rental.getStartDate().toString());
+		endDateLabel.setText(rental.getEndDate().toString());
 	}
+	
+	@Inject @Optional
+	public void onRentalChanged(@Named(IServiceConstants.ACTIVE_SELECTION) Rental rental) {
+		this.setRental(rental);
+	}
+	
 }

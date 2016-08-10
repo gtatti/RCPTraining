@@ -3,7 +3,10 @@
   <children xsi:type="basic:TrimmedWindow" xmi:id="_6wlLccgZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.window.main" label="Eclipse 4 RCP Application" width="500" height="400">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_6wlLkMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.ide.perspectivestack">
       <children xsi:type="advanced:Perspective" xmi:id="_6wlLkcgZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.perspective.sample">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.partsashcontainer.sample">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.partsashcontainer.sample" horizontal="true">
+          <children xsi:type="basic:PartStack" xmi:id="_ALYJoF70EeaByLK6bOvhug" elementId="com.altran.rental.eap.partstack.0">
+            <children xsi:type="basic:Part" xmi:id="_At3LoF70EeaByLK6bOvhug" elementId="com.altran.rental.eap.part.rentalagencyview" contributionURI="bundleclass://com.altran.rental.ui/com.altran.rental.ui.parts.RentalAgencyPart" label="RentalAgencyView"/>
+          </children>
           <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.partstack.sample">
             <children xsi:type="basic:Part" xmi:id="_6wlLlMgZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.part.sample" contributionURI="bundleclass://com.altran.rental.ui/com.altran.rental.ui.parts.RentalPropertyPart" label="Rental Property"/>
           </children>
