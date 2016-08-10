@@ -2,10 +2,7 @@
 package com.altran.rental.ui.parts;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import javax.inject.Inject;
 
-import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -13,8 +10,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 
-import com.altran.rental.core.RentalCoreActivator;
 import com.opcoach.training.rental.Rental;
+import com.opcoach.training.rental.RentalAgency;
 
 public class RentalPropertyPart {
 	
@@ -23,24 +20,11 @@ public class RentalPropertyPart {
 	private Label customerLabel;
 	private Group dateGroup;
 	
-	@Inject
-	public RentalPropertyPart() {
-		
-	}
-	
-	@PreDestroy
-	public void preDestroy() {
-		
-	}
 	
 	
-	@Focus
-	public void onFocus() {
-		
-	}
 	
 	@PostConstruct
-	public void createContent(Composite parent) {	
+	public void createContent(Composite parent, RentalAgency agency) {	
 		parent.setLayout(new GridLayout(1, false));
 		
 		Group infoGroup = new Group(parent, SWT.NONE);
@@ -53,7 +37,7 @@ public class RentalPropertyPart {
 		productLabel.setLayoutData(productGd);
 		
 		rentedToLabel = new Label(infoGroup, SWT.BORDER);
-		rentedToLabel.setText("Loué à : ");
+		rentedToLabel.setText("Louï¿½ ï¿½ : ");
 		
 		customerLabel = new Label(infoGroup, SWT.BORDER);
 		
@@ -76,7 +60,7 @@ public class RentalPropertyPart {
 		endDateLabel.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		endDateLabel.setText("New Label");
 		
-		this.setRental(RentalCoreActivator.getRentalAgency().getRentals().get(1));
+		this.setRental(agency.getRentals().get(1));
 	}
 	
 	public void setRental(Rental rental) {
