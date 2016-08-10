@@ -5,7 +5,7 @@
       <children xsi:type="advanced:Perspective" xmi:id="_6wlLkcgZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.perspective.sample">
         <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.partsashcontainer.sample" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_ALYJoF70EeaByLK6bOvhug" elementId="com.altran.rental.eap.partstack.0">
-            <children xsi:type="basic:Part" xmi:id="_At3LoF70EeaByLK6bOvhug" elementId="com.altran.rental.eap.part.rentalagencyview" contributionURI="bundleclass://com.altran.rental.ui/com.altran.rental.ui.parts.RentalAgencyPart" label="RentalAgencyView"/>
+            <children xsi:type="advanced:Placeholder" xmi:id="_2F4PkF8PEea0ONjIfrL6xg" elementId="com.altran.rental.eap.placeholder.0" ref="_At3LoF70EeaByLK6bOvhug"/>
           </children>
           <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.partstack.sample">
             <children xsi:type="basic:Part" xmi:id="_6wlLlMgZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.part.sample" contributionURI="bundleclass://com.altran.rental.ui/com.altran.rental.ui.parts.RentalPropertyPart" label="Rental Property"/>
@@ -23,6 +23,7 @@
         <children xsi:type="menu:HandledMenuItem" xmi:id="_6wlLj8gZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.handleditem.about" label="About" command="_6wlLhsgZEeSyMNYR5xypkQ"/>
       </children>
     </mainMenu>
+    <sharedElements xsi:type="basic:Part" xmi:id="_At3LoF70EeaByLK6bOvhug" elementId="com.altran.rental.eap.part.rentalagencyview" contributionURI="bundleclass://com.altran.rental.ui/com.altran.rental.ui.parts.RentalAgencyPart" label="RentalAgencyView"/>
     <trimBars xmi:id="_6wlLlcgZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.trimbar.top">
       <children xsi:type="menu:ToolBar" xmi:id="_6wlLlsgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.toolbar">
         <children xsi:type="menu:HandledToolItem" xmi:id="_6wlLl8gZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.handleditem.trimbar.top.open" iconURI="platform:/plugin/com.altran.rental.eap/icons/sample.png" command="_6wlLgMgZEeSyMNYR5xypkQ"/>
