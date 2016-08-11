@@ -8,5 +8,25 @@
             uri="fragment.e4xmi">
       </fragment>
    </extension>
+   <extension
+         point="com.opcoach.e4.preferences.e4PreferencePages">
+      <page
+            class="EmptyPage"
+            id="com.altran.rental.ui.page2"
+            name="Rental">
+      </page>
+      <page
+            category="com.altran.rental.ui.page2"
+            class="com.altran.rental.ui.preferences.RentalColorsPreferencePage"
+            id="com.altran.rental.ui.page1"
+            name="Colors">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.altran.rental.ui.preferences.RentalColorsPreferenceInitializer">
+      </initializer>
+   </extension>
 
 </plugin>

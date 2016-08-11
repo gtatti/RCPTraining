@@ -3,12 +3,14 @@ package com.altran.rental.ui;
 
 import javax.annotation.PostConstruct;
 
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
+import com.opcoach.e4.preferences.ScopedPreferenceStore;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.core.helpers.RentalAgencyGenerator;
 
@@ -20,6 +22,7 @@ public class RentalUiAddon implements RentalUIConstants {
 		RentalAgency rentalAgency = RentalAgencyGenerator.createSampleAgency();
 		context.set(RentalAgency.class, rentalAgency);
 		context.set(RENTAL_UI_IMG_REGISTRY, getLocalImageRegistry());
+		context.set(RENTAL_UI_PREF_STORE, new ScopedPreferenceStore(InstanceScope.INSTANCE, PLUGIN_ID));
 	}
 	
 	ImageRegistry getLocalImageRegistry()
@@ -40,5 +43,7 @@ public class RentalUiAddon implements RentalUIConstants {
 
 		return reg;
 	}
+	
+	
 
 }
