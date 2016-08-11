@@ -18,12 +18,21 @@
         <children xsi:type="menu:HandledMenuItem" xmi:id="_6wlLi8gZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.handleditem.file.open" label="Open" iconURI="platform:/plugin/com.altran.rental.eap/icons/sample.png" command="_6wlLgMgZEeSyMNYR5xypkQ"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_6wlLjMgZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.handleditem.save" label="Save" iconURI="platform:/plugin/com.altran.rental.eap/icons/save_edit.png" command="_6wlLg8gZEeSyMNYR5xypkQ"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_6wlLjcgZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.handleditem.quit" label="Quit" command="_6wlLfMgZEeSyMNYR5xypkQ"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_fELokF-eEeaZq9cHYVT8aA" elementId="com.altran.rental.eap.handledmenuitem.hello" label="Hello" command="_GP_ysF-dEeaZq9cHYVT8aA"/>
       </children>
       <children xsi:type="menu:Menu" xmi:id="_6wlLjsgZEeSyMNYR5xypkQ" elementId="help" label="Help">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_6wlLj8gZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.handleditem.about" label="About" command="_6wlLhsgZEeSyMNYR5xypkQ"/>
       </children>
     </mainMenu>
-    <sharedElements xsi:type="basic:Part" xmi:id="_At3LoF70EeaByLK6bOvhug" elementId="com.altran.rental.eap.part.rentalagencyview" contributionURI="bundleclass://com.altran.rental.ui/com.altran.rental.ui.parts.RentalAgencyPart" label="RentalAgencyView"/>
+    <sharedElements xsi:type="basic:Part" xmi:id="_At3LoF70EeaByLK6bOvhug" elementId="com.altran.rental.eap.part.rentalagencyview" contributionURI="bundleclass://com.altran.rental.ui/com.altran.rental.ui.parts.RentalAgencyPart" label="RentalAgencyView">
+      <menus xsi:type="menu:PopupMenu" xmi:id="_0g1-cF-eEeaZq9cHYVT8aA" elementId="com.altran.rental.eap.popupmenu.popupmenu" label="popupMenu">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_DiBeoF-fEeaZq9cHYVT8aA" elementId="com.altran.rental.eap.handledmenuitem.hello" label="Hello" command="_GP_ysF-dEeaZq9cHYVT8aA"/>
+      </menus>
+      <menus xmi:id="_9mAzMF-eEeaZq9cHYVT8aA" elementId="com.altran.rental.eap.menu.viewmenu" label="viewMenu">
+        <tags>ViewMenu</tags>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="__09-EF-eEeaZq9cHYVT8aA" elementId="com.altran.rental.eap.handledmenuitem.hello" label="Hello" command="_GP_ysF-dEeaZq9cHYVT8aA"/>
+      </menus>
+    </sharedElements>
     <trimBars xmi:id="_6wlLlcgZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.trimbar.top">
       <children xsi:type="menu:ToolBar" xmi:id="_6wlLlsgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.toolbar">
         <children xsi:type="menu:HandledToolItem" xmi:id="_6wlLl8gZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.handleditem.trimbar.top.open" iconURI="platform:/plugin/com.altran.rental.eap/icons/sample.png" command="_6wlLgMgZEeSyMNYR5xypkQ"/>
@@ -35,6 +44,7 @@
   <handlers xmi:id="_6wlLgcgZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.handler.openCommand" contributionURI="bundleclass://com.altran.rental.eap/com.altran.rental.eap.handlers.OpenHandler" command="_6wlLgMgZEeSyMNYR5xypkQ"/>
   <handlers xmi:id="_6wlLhMgZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.handler.saveCommand" contributionURI="bundleclass://com.altran.rental.eap/com.altran.rental.eap.handlers.SaveHandler" command="_6wlLg8gZEeSyMNYR5xypkQ"/>
   <handlers xmi:id="_6wlLh8gZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.handler.aboutCommand" contributionURI="bundleclass://com.altran.rental.eap/com.altran.rental.eap.handlers.AboutHandler" command="_6wlLhsgZEeSyMNYR5xypkQ"/>
+  <handlers xmi:id="_XegGEF-dEeaZq9cHYVT8aA" elementId="com.altran.rental.eap.handler.helloHandler" contributionURI="bundleclass://com.altran.rental.eap/com.altran.rental.eap.handlers.HelloHandler" command="_GP_ysF-dEeaZq9cHYVT8aA"/>
   <bindingTables xmi:id="_6wlLfsgZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.bindingtable" bindingContext="_6wlLecgZEeSyMNYR5xypkQ">
     <bindings xmi:id="_6wlLf8gZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.keybinding.m1q" keySequence="M1+Q" command="_6wlLfMgZEeSyMNYR5xypkQ"/>
     <bindings xmi:id="_6wlLgsgZEeSyMNYR5xypkQ" elementId="com.altran.rental.eap.keybinding.m1o" keySequence="M1+O" command="_6wlLgMgZEeSyMNYR5xypkQ"/>
@@ -45,10 +55,19 @@
     <children xmi:id="_6wlLesgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
     <children xmi:id="_6wlLe8gZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
   </rootContext>
+  <menuContributions xmi:id="_PWRd4F-hEeaZq9cHYVT8aA" elementId="com.altran.rental.eap.menucontribution.0" positionInParent="after=additions" parentId="popup">
+    <children xsi:type="menu:HandledMenuItem" xmi:id="_SWxacF-hEeaZq9cHYVT8aA" elementId="com.altran.rental.eap.handledmenuitem.displayviacontribution" label="Display via Contribution" command="_GP_ysF-dEeaZq9cHYVT8aA"/>
+  </menuContributions>
+  <menuContributions xmi:id="_cDbtAF-hEeaZq9cHYVT8aA" elementId="com.altran.rental.eap.menucontribution.1" positionInParent="after=additions" parentId="org.eclipse.ui.main.menu">
+    <children xsi:type="menu:Menu" xmi:id="_gYKRkF-hEeaZq9cHYVT8aA" elementId="com.altran.rental.eap.menu.contribution" label="Contribution">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_hnlSEF-hEeaZq9cHYVT8aA" elementId="com.altran.rental.eap.handledmenuitem.displayviacontribution" label="Display via Contribution" command="_GP_ysF-dEeaZq9cHYVT8aA"/>
+    </children>
+  </menuContributions>
   <commands xmi:id="_6wlLfMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
   <commands xmi:id="_6wlLgMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.file.open" commandName="openCommand"/>
   <commands xmi:id="_6wlLg8gZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
   <commands xmi:id="_6wlLhsgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <commands xmi:id="_GP_ysF-dEeaZq9cHYVT8aA" elementId="com.altran.rental.eap.command.hello" commandName="helloCommand"/>
   <addons xmi:id="_6wlLcsgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_6wlLc8gZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_6wlLdMgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
@@ -56,5 +75,4 @@
   <addons xmi:id="_6wlLdsgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_6wlLd8gZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
   <addons xmi:id="_6wlLeMgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
-  <addons xmi:id="_nVnroF7gEeaByLK6bOvhug" elementId="com.altran.rental.eap.addon.0" contributionURI="bundleclass://com.altran.rental.ui/com.altran.rental.ui.RentalUiAddon"/>
 </application:Application>

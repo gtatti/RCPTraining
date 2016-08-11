@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Ui
-Bundle-SymbolicName: com.altran.rental.ui
+Bundle-SymbolicName: com.altran.rental.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.altran.rental.ui.RentalUiActivator
 Bundle-Vendor: ALTRAN
@@ -12,7 +12,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.jface;bundle-version="3.12.0",
  com.altran.rental.core;bundle-version="1.0.0",
  org.eclipse.e4.core.services,
- org.eclipse.e4.core.di;bundle-version="1.6.0"
+ org.eclipse.e4.core.di;bundle-version="1.6.0",
+ org.eclipse.e4.ui.model.workbench;bundle-version="1.2.0.v20160229-1459"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: javax.annotation;version="1.0.0";resolution:=optional,
  javax.inject;version="1.0.0",
