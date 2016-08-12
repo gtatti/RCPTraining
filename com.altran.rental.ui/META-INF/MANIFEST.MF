@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Ui
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: com.altran.rental.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.altran.rental.ui.RentalUiActivator
-Bundle-Vendor: ALTRAN
+Bundle-Vendor: %Bundle-Vendor
 Export-Package: com.altran.rental.ui,
  com.altran.rental.ui.parts
 Require-Bundle: org.eclipse.core.runtime,

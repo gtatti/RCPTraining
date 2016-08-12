@@ -14,6 +14,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 
+import com.altran.rental.ui.Messages;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 
@@ -36,30 +37,30 @@ public class RentalPropertyPart {
 		parent.setLayout(new GridLayout(1, false));
 		
 		Group infoGroup = new Group(parent, SWT.NONE);
-		infoGroup.setText("Informations");
+		infoGroup.setText(Messages.RentalPropertyPart_0);
 		infoGroup.setLayout(new GridLayout(2, false));
 		
 		productLabel = new Label(infoGroup, SWT.BORDER);
 		productLabel.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 2, 1));
 		
 		rentedToLabel = new Label(infoGroup, SWT.BORDER);
-		rentedToLabel.setText("Loué à : ");
+		rentedToLabel.setText(Messages.RentalPropertyPart_1);
 		
 		customerLabel = new Label(infoGroup, SWT.BORDER);
 		
 		dateGroup = new Group(parent, SWT.NONE);
-		dateGroup.setText("Dates de location");
+		dateGroup.setText(Messages.RentalPropertyPart_2);
 		dateGroup.setLayout(new GridLayout(2, false));
 		
 		startLabel = new Label(dateGroup, SWT.NONE);
-		startLabel.setText("du : ");
+		startLabel.setText(Messages.RentalPropertyPart_3);
 		
 		startDateLabel = new Label(dateGroup, SWT.NONE);
 		startDateLabel.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		
 		endLabel = new Label(dateGroup, SWT.NONE);
 		endLabel.setSize(22, 15);
-		endLabel.setText("au : ");
+		endLabel.setText(Messages.RentalPropertyPart_4);
 		
 		endDateLabel = new Label(dateGroup, SWT.NONE);
 		endDateLabel.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
