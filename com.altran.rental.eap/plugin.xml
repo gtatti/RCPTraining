@@ -16,6 +16,10 @@
                name="applicationCSS"
                value="platform:/plugin/com.altran.rental.eap/css/default.css">
          </property>
+         <property
+               name="appName"
+               value="com.altran.rental.eap">
+         </property>
       </product>
    </extension>
 
