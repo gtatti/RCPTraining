@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.altran.rental.feature_1.0.0.qualifier.jar" id="com.altran.rental.feature" version="1.0.0.qualifier">
+      <category name="com.altran.rental"/>
+   </feature>
+   <category-def name="com.altran.rental" label="Rental"/>
+</site>
