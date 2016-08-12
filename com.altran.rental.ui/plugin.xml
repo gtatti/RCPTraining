@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
+   <extension-point id="palette" name="palette" schema="schema/palette.exsd"/>
 
    <extension
          id="com.altran.rental.ui.fragment"
@@ -12,14 +13,20 @@
          point="com.opcoach.e4.preferences.e4PreferencePages">
       <page
             class="EmptyPage"
-            id="com.altran.rental.ui.page2"
+            id="com.altran.rental.ui.rental"
             name="Rental">
       </page>
       <page
-            category="com.altran.rental.ui.page2"
+            category="com.altran.rental.ui.rental"
+            class="com.altran.rental.ui.preferences.PalettePreferencePage"
+            id="com.altran.rental.ui.palette"
+            name="Palette">
+      </page>
+      <page
+            category="com.altran.rental.ui.palette"
             class="com.altran.rental.ui.preferences.RentalColorsPreferencePage"
-            id="com.altran.rental.ui.page1"
-            name="Colors">
+            id="com.altran.rental.ui.default"
+            name="Default">
       </page>
    </extension>
    <extension
@@ -27,6 +34,19 @@
       <initializer
             class="com.altran.rental.ui.preferences.RentalColorsPreferenceInitializer">
       </initializer>
+   </extension>
+   <extension
+         point="com.altran.rental.ui.palette">
+      <palette
+            id="com.altran.rental.ui.palette1"
+            name="default"
+            paletteClass="com.altran.rental.ui.palettes.DefaultPalette">
+      </palette>
+      <palette
+            id="com.altran.rental.ui.palette2"
+            name="ugly"
+            paletteClass="com.altran.rental.ui.palettes.UglyPalette">
+      </palette>
    </extension>
 
 </plugin>

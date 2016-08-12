@@ -9,7 +9,6 @@ import javax.inject.Inject;
 
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
-import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.e4.ui.services.EMenuService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
@@ -20,6 +19,7 @@ import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.widgets.Composite;
 
 import com.altran.rental.ui.RentalUIConstants;
+import com.altran.rental.ui.palettes.Palette;
 import com.opcoach.training.rental.RentalAgency;
 
 public class RentalAgencyPart implements RentalUIConstants {
@@ -55,6 +55,13 @@ public class RentalAgencyPart implements RentalUIConstants {
 			@Preference(value=PREF_CUSTOMER_COLOR) String customerColor,
 			@Preference(value=PREF_RENTAL_COLOR) String rentalColor,
 			@Preference(value=PREF_RENTAL_OBJECT_COLOR) String rentalObjectColor) {
+		if(this.treeViewer == null || treeViewer.getControl().isDisposed())
+			return;
+		this.treeViewer.refresh();
+	}
+	
+	@Inject
+	public void onPaletteChanged(Palette palette) {
 		if(this.treeViewer == null || treeViewer.getControl().isDisposed())
 			return;
 		this.treeViewer.refresh();

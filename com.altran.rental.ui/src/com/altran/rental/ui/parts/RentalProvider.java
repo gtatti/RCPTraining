@@ -1,10 +1,12 @@
 package com.altran.rental.ui.parts;
 
 import java.util.Collection;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ColorRegistry;
 import org.eclipse.jface.resource.ImageRegistry;
@@ -17,6 +19,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 
 import com.altran.rental.ui.RentalUIConstants;
+import com.altran.rental.ui.palettes.Palette;
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
@@ -156,20 +159,17 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 	@Inject @Named(RENTAL_UI_PREF_STORE)
 	IPreferenceStore preferenceStore;
 	
+	@Inject
+	private Palette palette;
+		
 	@Override
 	public Color getForeground(Object element) {
-		if(element instanceof Customer)
-			return getAColor(PREF_CUSTOMER_COLOR);
-		if(element instanceof Rental)
-			return getAColor(PREF_RENTAL_COLOR);
-		if(element instanceof RentalObject)
-			return getAColor(PREF_RENTAL_OBJECT_COLOR);
-		return null;
+		return (palette == null) ? null : palette.getForeground(element);
 	}
 	
 	@Override
 	public Color getBackground(Object element) {
-		return null;
+		return (palette == null) ? null : palette.getBackground(element);
 	}
 	
 	@Inject @Named(RENTAL_UI_IMG_REGISTRY)
